@@ -1,4 +1,5 @@
 export const palette = {
+  darkPlum: "#20162D",
   black: "#1d1d1d",
   white: "#ffffff",
   offWhite: "#e6e6e6",

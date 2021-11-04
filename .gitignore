@@ -65,6 +65,9 @@ buck-out/
 # VS Code
 .vscode
 
+# vim
+*.swp
+
 # Expo
 .expo/*
 bin/Exponent.app

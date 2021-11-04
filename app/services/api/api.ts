@@ -3,11 +3,13 @@ import { getGeneralApiProblem } from "./api-problem"
 import { ApiConfig, DEFAULT_API_CONFIG } from "./api-config"
 import * as Types from "./api.types"
 import { QuestionSnapshot } from "../../models/question/question"
-import * as uuid from "react-native-uuid"
+import uuid from "react-native-uuid"
 
 const convertQuestion = (raw: any): QuestionSnapshot => {
-  const id = uuid.v1().toString()
+  console.log("converting question:", raw)
+  const id = uuid.v4().toString()
 
+  console.log("id question:", id)
   return {
     id: id,
     category: raw.category,
@@ -16,10 +18,11 @@ const convertQuestion = (raw: any): QuestionSnapshot => {
     question: raw.question,
     correctAnswer: raw.correct_answer,
     incorrectAnswers: raw.incorrect_answers,
+    guess: "",
   }
 }
 
-const API_PAGE_SIZE = 50
+const API_PAGE_SIZE = 2
 
 /**
  * Manages all requests to the API.

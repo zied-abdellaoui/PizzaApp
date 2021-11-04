@@ -1,4 +1,5 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
+import { shuffle } from "lodash"
 
 /**
  * Model description here for TypeScript hints.
@@ -13,9 +14,21 @@ export const QuestionModel = types
     question: types.maybe(types.string),
     correctAnswer: types.maybe(types.string),
     incorrectAnswers: types.optional(types.array(types.string), []),
+    guess: types.maybe(types.string),
   })
-  .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
-  .actions((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
+  .views((self) => ({
+    get allAnswers() {
+      return shuffle(self.incorrectAnswers.concat([self.correctAnswer]))
+    },
+    get isCorrect() {
+      return self.correctAnswer === self.guess
+    },
+  })) // eslint-disable-line @typescript-eslint/no-unused-vars
+  .actions((self) => ({
+    setGuess(guess: string) {
+      self.guess = guess
+    },
+  })) // eslint-disable-line @typescript-eslint/no-unused-vars
 
 type QuestionType = Instance<typeof QuestionModel>
 export interface Question extends QuestionType {}

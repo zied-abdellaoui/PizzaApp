@@ -1,4 +1,7 @@
 {
+  "questionScreen": {
+    "header": "Questions"
+  },
   "common": {
     "ok": "OK!",
     "cancel": "Cancel",

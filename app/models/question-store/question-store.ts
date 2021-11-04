@@ -20,6 +20,7 @@ export const QuestionStoreModel = types
   }))
   .actions((self) => ({
     getQuestions: flow(function* () {
+      __DEV__ && console.tron.log("getQuestions")
       const result: GetQuestionsResult = yield self.environment.api.getQuestions()
 
       if (result.kind === "ok") {
