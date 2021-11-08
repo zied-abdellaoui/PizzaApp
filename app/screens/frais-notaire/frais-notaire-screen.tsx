@@ -6,7 +6,7 @@ import { NavigatorParamList } from "../../navigators"
 import { StackScreenProps } from "@react-navigation/stack"
 import { Screen, Text, Header, GradientBackground } from "../../components"
 // import { useNavigation } from "@react-navigation/native"
-// import { useStores } from "../../models"
+import { useStores } from "../../models"
 import { color, spacing } from "../../theme"
 
 const FULL: ViewStyle = {
@@ -48,7 +48,7 @@ export const FraisNotaireScreen: FC<
   StackScreenProps<NavigatorParamList, "fraisNotaire">
 > = observer(function FraisNotaireScreen({ navigation }) {
   // Pull in one of our MST stores
-  // const { someStore, anotherStore } = useStores()
+  const { property } = useStores()
 
   // Pull in navigation via hook
   const goBack = () => navigation.goBack()
