@@ -64,6 +64,7 @@ buck-out/
 
 # VS Code
 .vscode
+*.swp
 
 # Expo
 .expo/*
