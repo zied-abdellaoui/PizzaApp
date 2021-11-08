@@ -20,7 +20,8 @@
     
   },
   "fraisNotaireScreen": {
-    "title": "Frais de notaire"
+    "title": "Frais de notaire",
+    "aquisitionCost": "Aquisition cost"
   },
   "demoScreen": {
     "howTo": "HOW TO",

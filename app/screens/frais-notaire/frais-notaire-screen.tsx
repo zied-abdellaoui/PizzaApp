@@ -1,13 +1,14 @@
 import React, { FC } from "react"
 import { observer } from "mobx-react-lite"
-import { ViewStyle, TextStyle, View } from "react-native"
+import { ViewStyle, TextStyle, View, TextInputChangeEventData } from "react-native"
 
 import { NavigatorParamList } from "../../navigators"
 import { StackScreenProps } from "@react-navigation/stack"
-import { Screen, Text, Header, GradientBackground } from "../../components"
+import { Screen, Text, Header, GradientBackground, TextField } from "../../components"
 // import { useNavigation } from "@react-navigation/native"
 import { useStores } from "../../models"
 import { color, spacing } from "../../theme"
+import { string } from "mobx-state-tree/dist/internal"
 
 const FULL: ViewStyle = {
   flex: 1,
@@ -27,21 +28,9 @@ const HEADER_TITLE: TextStyle = {
   lineHeight: 15,
   textAlign: "center",
 }
-const LIST_CONTAINER: ViewStyle = {
-  alignItems: "center",
-  flexDirection: "row",
-  padding: 10,
-}
-const IMAGE: ImageStyle = {
-  borderRadius: 35,
-  height: 65,
-  width: 65,
-}
-const LIST_TEXT: TextStyle = {
-  marginLeft: 10,
-}
-const FLAT_LIST: ViewStyle = {
-  paddingHorizontal: spacing[4],
+
+const INPUT_TEXT: TextStyle = {
+  color: color.palette.deepPurple,
 }
 
 export const FraisNotaireScreen: FC<
@@ -52,6 +41,14 @@ export const FraisNotaireScreen: FC<
 
   // Pull in navigation via hook
   const goBack = () => navigation.goBack()
+
+  const onAquisionCostChange = (value: string) => {
+    console.tron.log(value)
+    value = value.replace(/[^0-9]/g, "")
+    const aquisionCost = parseInt(value)
+    property.setAquisitionCost(isNaN(aquisionCost) ? 0 : aquisionCost)
+  }
+
   return (
     <View testID="FraisNotaireScreen" style={FULL}>
       <GradientBackground colors={["#422443", "#281b34"]} />
@@ -63,7 +60,21 @@ export const FraisNotaireScreen: FC<
           style={HEADER}
           titleStyle={HEADER_TITLE}
         />
-        <Text preset="header" text="" />
+        <Text preset="header" text={property.fraisNotaire.toLocaleString()} />
+        <TextField
+          value={property.aquisitionCost ? property.aquisitionCost.toLocaleString() : ""}
+          onChangeText={onAquisionCostChange}
+          inputStyle={INPUT_TEXT}
+          labelTx="fraisNotaireScreen.aquisitionCost"
+          maxLength={10}
+          keyboardType="numeric"
+        />
+        <Text preset="header" text={property.emolument_1.toLocaleString()} />
+        <Text preset="header" text={property.emolument_2.toLocaleString()} />
+        <Text preset="header" text={property.emolument_3.toLocaleString()} />
+        <Text preset="header" text={property.emolument_4.toLocaleString()} />
+        <Text preset="header" text={property.emolument_ht.toLocaleString()} />
+        <Text preset="header" text={property.emolument_ttc.toLocaleString()} />
       </Screen>
     </View>
   )
