@@ -21,6 +21,10 @@
   },
   "fraisNotaireScreen": {
     "title": "Frais de notaire",
+    "save": "save",
+    "saving": "saving",
+    "cancel": "cancel",
+    "chooseName":"Choose a name for this simulation",
     "aquisitionCost": "Aquisition cost"
   },
   "demoScreen": {
