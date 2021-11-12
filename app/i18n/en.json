@@ -4,6 +4,11 @@
     "cancel": "Cancel",
     "back": "Back"
   },
+  "main":{
+    "simulations": "Simulations",
+    "tools": "Tools",
+    "configuration": "Configuration"    
+  },
   "errors": {
     "invalidEmail": "Invalid email address."
   },
