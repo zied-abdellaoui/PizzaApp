@@ -9,6 +9,7 @@ import { useColorScheme } from "react-native"
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { SimulationsScreen, ToolsScreen, ConfigurationScreen } from "../screens"
+import { ToolsNavigator } from "./tools/tools-navigator"
 import { navigationRef } from "./navigation-utilities"
 import Ionicons from "@expo/vector-icons/FontAwesome5"
 import { color, typography, sizes } from "../theme"
@@ -58,8 +59,8 @@ const Tab = createBottomTabNavigator()
 const AppTab = () => {
   return (
     <Tab.Navigator screenOptions={createScreenOptions} initialRouteName="Simulations">
-      <Tab.Screen name="Simulations" label="hello" component={SimulationsScreen} />
-      <Tab.Screen name="Tools" component={ToolsScreen} />
+      <Tab.Screen name="Simulations" component={SimulationsScreen} />
+      <Tab.Screen name="Tools" component={ToolsNavigator} />
       <Tab.Screen name="Configuration" component={ConfigurationScreen} />
     </Tab.Navigator>
   )

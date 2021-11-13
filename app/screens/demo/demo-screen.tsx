@@ -7,11 +7,11 @@ import { Screen, Text } from "../../components"
 import { color } from "../../theme"
 
 const ROOT: ViewStyle = {
-  backgroundColor: color.background,
+  backgroundColor: color.palette.black,
   flex: 1,
 }
 
-export const ToolsScreen = observer(function ToolsScreen() {
+export const DemoScreen = observer(function DemoScreen() {
   // Pull in one of our MST stores
   // const { someStore, anotherStore } = useStores()
 
