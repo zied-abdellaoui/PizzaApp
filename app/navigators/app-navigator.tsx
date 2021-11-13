@@ -11,7 +11,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { SimulationsScreen, ToolsScreen, ConfigurationScreen } from "../screens"
 import { ToolsNavigator } from "./tools/tools-navigator"
 import { navigationRef } from "./navigation-utilities"
-import Ionicons from "@expo/vector-icons/FontAwesome5"
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5"
 import { color, typography, sizes } from "../theme"
 import { translate } from "../i18n"
 /**
@@ -43,13 +43,12 @@ const createScreenOptions = ({ route }) => {
   return {
     headerShown: true,
     tabBarIcon: function tabBarIcon({ color, size }) {
-      return <Ionicons name={iconName} size={size} color={color} />
+      return <FontAwesome5 name={iconName} size={size} color={color} />
     },
-    tabBarLabel: TAB_LABEL[route.name],
     tabBarActiveTintColor: color.primary,
     tabBarInactiveTintColor: color.dim,
-    tabBarLabelStyle: { fontSize: sizes[1], fontStyle: typography.primary },
-    headerTitleStyle: { fontStyle: typography.primary },
+    tabBarLabelStyle: { fontSize: sizes[1], fontFamily: typography.primary },
+    headerTitleStyle: { fontFamily: typography.primary },
   }
 }
 
