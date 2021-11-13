@@ -41,7 +41,7 @@ const TAB_LABEL = {
 const createScreenOptions = ({ route }) => {
   const iconName = TAB_ICON[route.name]
   return {
-    headerShown: true,
+    headerShown: false,
     tabBarIcon: function tabBarIcon({ color, size }) {
       return <FontAwesome5 name={iconName} size={size} color={color} />
     },

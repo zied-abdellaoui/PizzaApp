@@ -17,23 +17,11 @@ const FULL: ViewStyle = {
 const CONTAINER: ViewStyle = {
   backgroundColor: color.transparent,
 }
-const HEADER: TextStyle = {
-  paddingBottom: spacing[5] - 1,
-  paddingHorizontal: spacing[4],
-  paddingTop: spacing[3],
-}
-const HEADER_TITLE: TextStyle = {
-  fontSize: 12,
-  fontWeight: "bold",
-  letterSpacing: 1.5,
-  lineHeight: 15,
-  textAlign: "center",
-}
 
 const DEMO: ViewStyle = {
   paddingVertical: spacing[4],
   paddingHorizontal: spacing[4],
-  backgroundColor: color.palette.deepPurple,
+  backgroundColor: color.primary,
 }
 const BOLD: TextStyle = { fontWeight: "bold" }
 
@@ -74,15 +62,12 @@ export const FraisNotaireScreen: FC<
 
   return (
     <View testID="FraisNotaireScreen" style={FULL}>
-      <GradientBackground colors={["#422443", "#281b34"]} />
-      <Screen style={CONTAINER} preset="fixed" backgroundColor={color.transparent}>
+      <Screen style={CONTAINER} preset="fixed">
         <Header
           headerTx="fraisNotaireScreen.title"
           leftIcon="back"
           rightIcon="history"
           onLeftPress={goBack}
-          style={HEADER}
-          titleStyle={HEADER_TITLE}
         />
         <Text preset="header" text={property.fraisNotaire.toLocaleString()} />
         <TextField

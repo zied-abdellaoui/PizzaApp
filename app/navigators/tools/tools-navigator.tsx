@@ -1,19 +1,23 @@
 import React from "react"
 import { createStackNavigator } from "@react-navigation/stack"
-import { ToolsScreen } from "../../screens"
+import { ToolsScreen, FraisNotaireScreen, DemoScreen } from "../../screens"
 
 export type ToolsParamList = {
-  menu: undefined
+  Menu: undefined
+  FraisNotaire: undefined
+  Demo: undefined
 }
 
 const Stack = createStackNavigator<ToolsParamList>()
 export const ToolsNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName="menu"
+      initialRouteName="Menu"
       screenOptions={{ cardStyle: { backgroundColor: "transparent" }, headerShown: false }}
     >
-      <Stack.Screen name="menu" component={ToolsScreen} />
+      <Stack.Screen name="Menu" component={ToolsScreen} />
+      <Stack.Screen name="FraisNotaire" component={FraisNotaireScreen} />
+      <Stack.Screen name="Demo" component={DemoScreen} />
     </Stack.Navigator>
   )
 }
