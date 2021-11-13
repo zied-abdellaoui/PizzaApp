@@ -15,7 +15,17 @@
   "welcomeScreen": {
     "poweredBy": "POWERED BY IGNITE",
     "readyForLaunch": "Ready for launch.",
-    "continue": "CONTINUE"
+    "continue": "CONTINUE",
+    "fraisNotaire": "Frais de notaire"
+    
+  },
+  "fraisNotaireScreen": {
+    "title": "Frais de notaire",
+    "save": "save",
+    "saving": "saving",
+    "cancel": "cancel",
+    "chooseName":"Choose a name for this simulation",
+    "aquisitionCost": "Aquisition cost"
   },
   "demoScreen": {
     "howTo": "HOW TO",
