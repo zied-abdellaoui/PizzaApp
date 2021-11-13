@@ -166,7 +166,7 @@
       }
     },
     "globals": {
-      "__DEV__": true,
+      "__DEV__": false,
       "jasmine": false,
       "beforeAll": false,
       "afterAll": false,
