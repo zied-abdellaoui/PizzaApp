@@ -8,5 +8,6 @@ export const initFonts = async () => {
   await Font.loadAsync({
     Montserrat: require("./Montserrat-Regular.ttf"),
     "Montserrat-Regular": require("./Montserrat-Regular.ttf"),
+    "Montserrat-Bold": require("./Montserrat-Bold.ttf"),
   })
 }

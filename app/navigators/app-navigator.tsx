@@ -12,7 +12,7 @@ import { SimulationsScreen, ToolsScreen, ConfigurationScreen } from "../screens"
 import { ToolsNavigator } from "./tools/tools-navigator"
 import { navigationRef } from "./navigation-utilities"
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5"
-import { color, typography, sizes } from "../theme"
+import { color, typography, size } from "../theme"
 import { translate } from "../i18n"
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -47,7 +47,7 @@ const createScreenOptions = ({ route }) => {
     },
     tabBarActiveTintColor: color.primary,
     tabBarInactiveTintColor: color.dim,
-    tabBarLabelStyle: { fontSize: sizes[1], fontFamily: typography.primary },
+    tabBarLabelStyle: { fontSize: size.text, fontFamily: typography.primary },
     headerTitleStyle: { fontFamily: typography.primary },
   }
 }

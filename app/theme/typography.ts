@@ -20,6 +20,11 @@ export const typography = {
   primary: Platform.select({ ios: "Montserrat", android: "Montserrat" }),
 
   /**
+   * The header font.  Used in screen header.
+   */
+  header: Platform.select({ ios: "Montserrat-Bold", android: "Montserrat-Bold" }),
+
+  /**
    * An alternate font used for perhaps titles and stuff.
    */
   secondary: Platform.select({ ios: "Arial", android: "sans-serif" }),
