@@ -25,7 +25,7 @@
     "cancel": "cancel",
     "chooseName": "Choose a name for this simulation",
     "aquisitionCost": "Aquisition cost",
-    "details": "Details"
+    "details": { "title": "Details", "emoluments": "Emoluments" }
   },
   "demoScreen": {
     "howTo": "HOW TO",

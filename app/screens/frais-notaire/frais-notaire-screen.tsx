@@ -79,7 +79,36 @@ export const FraisNotaireScreen: FC<StackScreenProps<NavigatorParamList, "fraisN
             keyboardType="numeric"
           />
 
-          <Card titleTx="fraisNotaireScreen.details">
+          <Card titleTx="fraisNotaireScreen.details.title">
+            <ListItem.Accordion
+              content={
+                <>
+                  <ListItem.Content>
+                    <ListItem.Title>
+                      <Text tx="fraisNotaireScreen.details.emoluments"></Text>
+                    </ListItem.Title>
+                  </ListItem.Content>
+                </>
+              }
+              isExpanded={expanded}
+              onPress={() => {
+                setExpanded(!expanded)
+              }}
+            >
+              <ListItem
+                key="emolumets"
+                onPress={() => console.tron.log("log from list items")}
+                bottomDivider
+              >
+                <ListItem.Content>
+                  <ListItem.Title>
+                    <Text tx="fraisNotaireScreen.title"></Text>
+                  </ListItem.Title>
+                  <ListItem.Subtitle>subtite</ListItem.Subtitle>
+                </ListItem.Content>
+              </ListItem>
+              <ListItem.Chevron />
+            </ListItem.Accordion>
             <Text preset="header" text={property.emolument_1.toLocaleString()} />
             <Text preset="header" text={property.emolument_2.toLocaleString()} />
             <Text preset="header" text={property.emolument_3.toLocaleString()} />
