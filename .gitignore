@@ -64,10 +64,7 @@ buck-out/
 
 # VS Code
 .vscode
-
-# vim
 *.swp
-Session.vim
 
 # Expo
 .expo/*
@@ -85,5 +82,3 @@ web-build/
 # Configurations
 app/config/env.*.js
 !env.js
-
-
