@@ -1,7 +1,7 @@
 import * as React from "react"
 import { StyleProp, TextStyle, View, ViewStyle } from "react-native"
 import { observer } from "mobx-react-lite"
-import { translate } from "../../i18n"
+import { translate, TxKeyPath } from "../../i18n"
 import { color, typography } from "../../theme"
 import { Text } from "../text/text"
 import { flatten } from "ramda"
@@ -21,6 +21,7 @@ export interface CardProps {
    * An optional style override useful for padding & margin.
    */
   style?: StyleProp<ViewStyle>
+  titleTx?: TxKeyPath
 }
 
 /**

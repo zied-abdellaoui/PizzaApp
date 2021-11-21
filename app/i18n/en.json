@@ -4,10 +4,10 @@
     "cancel": "Cancel",
     "back": "Back"
   },
-  "main":{
+  "main": {
     "simulations": "Simulations",
     "tools": "Tools",
-    "configuration": "Configuration"    
+    "configuration": "Configuration"
   },
   "errors": {
     "invalidEmail": "Invalid email address."
@@ -17,15 +17,15 @@
     "readyForLaunch": "Ready for launch.",
     "continue": "CONTINUE",
     "fraisNotaire": "Frais de notaire"
-    
   },
   "fraisNotaireScreen": {
     "title": "Frais de notaire",
     "save": "save",
     "saving": "saving",
     "cancel": "cancel",
-    "chooseName":"Choose a name for this simulation",
-    "aquisitionCost": "Aquisition cost"
+    "chooseName": "Choose a name for this simulation",
+    "aquisitionCost": "Aquisition cost",
+    "details": "Details"
   },
   "demoScreen": {
     "howTo": "HOW TO",
