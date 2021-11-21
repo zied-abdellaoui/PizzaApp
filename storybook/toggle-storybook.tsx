@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { DevSettings } from "react-native"
-import { loadString, saveString } from "../app/utils/storage"
-
 /**
  * Toggle Storybook mode, in __DEV__ mode only.
  *
@@ -18,15 +15,11 @@ export function ToggleStorybook(props) {
 
   useEffect(() => {
     if (__DEV__) {
-      console.tron.debug(__DEV__)
-      // Load the setting from storage if it's there
-      loadString("devStorybook").then((storedSetting) => {
-        // Set the initial value
-        setShowStorybook(true)
+      console.tron.debug("__DEV__ value:" + __DEV__, __DEV__)
+      setShowStorybook(false)
 
-        // Load the storybook UI once
-        setStorybookUIRoot(() => require("./storybook").StorybookUIRoot)
-      })
+      // Load the storybook UI once
+      setStorybookUIRoot(() => require("./storybook").StorybookUIRoot)
     }
   }, [])
 
