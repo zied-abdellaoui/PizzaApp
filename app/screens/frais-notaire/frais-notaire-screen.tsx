@@ -69,7 +69,6 @@ export const FraisNotaireScreen: FC<
           rightIcon="history"
           onLeftPress={goBack}
         />
-        <Text preset="header" text={property.fraisNotaire.toLocaleString()} />
         <TextField
           value={property.aquisitionCost ? property.aquisitionCost.toLocaleString() : ""}
           onChangeText={onAquisionCostChange}

@@ -89,12 +89,12 @@ const FOOTER_CONTENT: ViewStyle = {
 export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> = observer(
   ({ navigation }) => {
     const nextScreen = () => navigation.navigate("demo")
-    const fraisNotaireScreen = () => navigation.navigate("fraisNotaire")
 
     return (
       <View testID="WelcomeScreen" style={FULL}>
         <GradientBackground colors={["#422443", "#281b34"]} />
         <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
+          :q
           <Header headerTx="welcomeScreen.poweredBy" style={HEADER} titleStyle={HEADER_TITLE} />
           <Text style={TITLE_WRAPPER}>
             <Text style={TITLE} text="Your new app, " />
@@ -120,13 +120,6 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
               textStyle={CONTINUE_TEXT}
               tx="welcomeScreen.continue"
               onPress={nextScreen}
-            />
-            <Button
-              testID="frais-notaire-button"
-              style={CONTINUE}
-              textStyle={CONTINUE_TEXT}
-              tx="welcomeScreen.fraisNotaire"
-              onPress={fraisNotaireScreen}
             />
           </View>
         </SafeAreaView>
