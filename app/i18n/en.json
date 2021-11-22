@@ -25,7 +25,12 @@
     "cancel": "cancel",
     "chooseName": "Choose a name for this simulation",
     "aquisitionCost": "Aquisition cost",
-    "details": { "title": "Details", "emoluments": "Emoluments" }
+    "details": {
+      "title": "Details",
+      "emoluments": "Emoluments",
+      "taxes": "Taxes",
+      "thirdline": "Formality and debours"
+    }
   },
   "demoScreen": {
     "howTo": "HOW TO",

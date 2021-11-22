@@ -22,7 +22,7 @@ export function ToggleStorybook(props) {
       // Load the setting from storage if it's there
       loadString("devStorybook").then((storedSetting) => {
         // Set the initial value
-        setShowStorybook(true)
+        setShowStorybook(false)
 
         // Load the storybook UI once
         setStorybookUIRoot(() => require("./storybook").StorybookUIRoot)

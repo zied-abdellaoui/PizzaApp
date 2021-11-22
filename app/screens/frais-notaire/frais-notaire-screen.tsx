@@ -4,7 +4,7 @@ import { ViewStyle, TextStyle, View, TextInputChangeEventData } from "react-nati
 
 import { NavigatorParamList } from "../../navigators"
 import { StackScreenProps } from "@react-navigation/stack"
-import { Screen, Text, Header, Card, TextField, Button } from "../../components"
+import { Screen, Text, Header, Card, ResultLine, TextField, Button } from "../../components"
 // import { useNavigation } from "@react-navigation/native"
 import { useStores } from "../../models"
 import { color, spacing } from "../../theme"
@@ -80,41 +80,52 @@ export const FraisNotaireScreen: FC<StackScreenProps<NavigatorParamList, "fraisN
           />
 
           <Card titleTx="fraisNotaireScreen.details.title">
-            <ListItem.Accordion
-              content={
-                <>
-                  <ListItem.Content>
-                    <ListItem.Title>
-                      <Text tx="fraisNotaireScreen.details.emoluments"></Text>
-                    </ListItem.Title>
-                  </ListItem.Content>
-                </>
-              }
-              isExpanded={expanded}
-              onPress={() => {
-                setExpanded(!expanded)
-              }}
+            <ResultLine
+              amountPreset="lostAmount"
+              titleTx="fraisNotaireScreen.details.emoluments"
+              amount={property.emolument_ttc}
+              accordion
             >
-              <ListItem
-                key="emolumets"
-                onPress={() => console.tron.log("log from list items")}
-                bottomDivider
-              >
-                <ListItem.Content>
-                  <ListItem.Title>
-                    <Text tx="fraisNotaireScreen.title"></Text>
-                  </ListItem.Title>
-                  <ListItem.Subtitle>subtite</ListItem.Subtitle>
-                </ListItem.Content>
-              </ListItem>
-              <ListItem.Chevron />
-            </ListItem.Accordion>
-            <Text preset="header" text={property.emolument_1.toLocaleString()} />
-            <Text preset="header" text={property.emolument_2.toLocaleString()} />
-            <Text preset="header" text={property.emolument_3.toLocaleString()} />
+              <ResultLine
+                amountPreset="lostAmount"
+                titleTx="fraisNotaireScreen.details.taxes"
+                amount={property.emolument_1}
+              />
+              <ResultLine
+                amountPreset="lostAmount"
+                titleTx="fraisNotaireScreen.details.taxes"
+                amount={property.emolument_2}
+              />
+              <ResultLine
+                amountPreset="lostAmount"
+                titleTx="fraisNotaireScreen.details.taxes"
+                amount={property.emolument_3}
+              />
+              <ResultLine
+                amountPreset="lostAmount"
+                titleTx="fraisNotaireScreen.details.taxes"
+                amount={property.emolument_4}
+              />
+              <ResultLine
+                amountPreset="lostAmount"
+                titleTx="fraisNotaireScreen.details.taxes"
+                amount={property.emolument_ttc - property.emolument_ht}
+              />
+            </ResultLine>
+
+            <ResultLine
+              amountPreset="lostAmount"
+              titleTx="fraisNotaireScreen.details.taxes"
+              amount={20}
+            />
+
+            <ResultLine
+              amountPreset="lostAmount"
+              titleTx="fraisNotaireScreen.details.thirdline"
+              amount={20}
+            />
             <Text preset="header" text={property.emolument_4.toLocaleString()} />
             <Text preset="header" text={property.emolument_ht.toLocaleString()} />
-            <Text preset="header" text={property.emolument_ttc.toLocaleString()} />
           </Card>
           <Button
             labelTx="fraisNotaireScreen.save"

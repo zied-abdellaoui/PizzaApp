@@ -7,6 +7,8 @@ export const elementsTheme = {
       borderWidth: 0,
       fontFamily: typography.primary,
       borderRadius: 10,
+      paddingHorizontal: 5,
+      marginHorizontal: 5,
     },
   },
   CardTitle: {
@@ -18,7 +20,12 @@ export const elementsTheme = {
   },
   CardDivider: {
     style: {
-      marginHorizontal: -15,
+      marginHorizontal: -5,
+    },
+  },
+  ListItem: {
+    containerStyle: {
+      paddingHorizontal: 0,
     },
   },
 }

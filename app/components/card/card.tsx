@@ -1,15 +1,7 @@
 import * as React from "react"
-import { StyleProp, TextStyle, View, ViewStyle } from "react-native"
-import { observer } from "mobx-react-lite"
+import { StyleProp, ViewStyle } from "react-native"
 import { translate, TxKeyPath } from "../../i18n"
-import { color, typography } from "../../theme"
-import { Text } from "../text/text"
-import { flatten } from "ramda"
 import { Card as CardElement } from "react-native-elements"
-
-const CONTAINER: ViewStyle = {
-  justifyContent: "center",
-}
 
 export interface CardProps {
   /**
