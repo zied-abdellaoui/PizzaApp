@@ -10,7 +10,6 @@ import { useStores } from "../../models"
 import { color, spacing } from "../../theme"
 import Dialog from "react-native-dialog"
 import { translate } from "../../i18n"
-import { ListItem } from "react-native-elements"
 
 const FULL: ViewStyle = {
   flex: 1,
@@ -44,7 +43,6 @@ export const FraisNotaireScreen: FC<StackScreenProps<NavigatorParamList, "fraisN
 
     const [saveDialogVisible, setSaveDialogVisible] = useState(false)
     const [saveSimulationName, setSaveSimulationName] = useState("")
-    const [expanded, setExpanded] = useState(false)
 
     // Pull in navigation via hook
     const goBack = () => navigation.goBack()
@@ -63,7 +61,7 @@ export const FraisNotaireScreen: FC<StackScreenProps<NavigatorParamList, "fraisN
 
     return (
       <View testID="FraisNotaireScreen" style={FULL}>
-        <Screen style={CONTAINER} preset="fixed">
+        <Screen style={CONTAINER} preset="scroll">
           <Header
             headerTx="fraisNotaireScreen.title"
             leftIcon="back"
