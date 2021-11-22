@@ -81,46 +81,46 @@ export const FraisNotaireScreen: FC<StackScreenProps<NavigatorParamList, "fraisN
 
           <Card titleTx="fraisNotaireScreen.details.title">
             <ResultLine
-              amountPreset="lostAmount"
+              amountPreset="negativeAmount"
               titleTx="fraisNotaireScreen.details.emoluments"
               amount={property.emolument_ttc}
               accordion
             >
               <ResultLine
-                amountPreset="lostAmount"
+                amountPreset="negativeAmount"
                 titleTx="fraisNotaireScreen.details.taxes"
                 amount={property.emolument_1}
               />
               <ResultLine
-                amountPreset="lostAmount"
+                amountPreset="negativeAmount"
                 titleTx="fraisNotaireScreen.details.taxes"
                 amount={property.emolument_2}
               />
               <ResultLine
-                amountPreset="lostAmount"
+                amountPreset="negativeAmount"
                 titleTx="fraisNotaireScreen.details.taxes"
                 amount={property.emolument_3}
               />
               <ResultLine
-                amountPreset="lostAmount"
+                amountPreset="negativeAmount"
                 titleTx="fraisNotaireScreen.details.taxes"
                 amount={property.emolument_4}
               />
               <ResultLine
-                amountPreset="lostAmount"
+                amountPreset="negativeAmount"
                 titleTx="fraisNotaireScreen.details.taxes"
                 amount={property.emolument_ttc - property.emolument_ht}
               />
             </ResultLine>
 
             <ResultLine
-              amountPreset="lostAmount"
+              amountPreset="negativeAmount"
               titleTx="fraisNotaireScreen.details.taxes"
               amount={20}
             />
 
             <ResultLine
-              amountPreset="lostAmount"
+              amountPreset="negativeAmount"
               titleTx="fraisNotaireScreen.details.thirdline"
               amount={20}
             />

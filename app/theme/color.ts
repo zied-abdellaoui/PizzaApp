@@ -49,9 +49,9 @@ export const color = {
    */
   error: palette.angry,
 
-  lostAmount: palette.orangeDarker,
+  negativeAmount: palette.angry,
 
-  gainedAmount: palette.green,
+  positiveAmount: palette.green,
 
   /**
    * Storybook background for Text stories, or any stories where

@@ -40,8 +40,8 @@ export const presets = {
    * A smaller piece of secondary information.
    */
   secondary: { ...BASE, fontSize: 9, color: color.dim } as TextStyle,
-  lostAmount: { ...BASE, color: color.lostAmount } as TextStyle,
-  gainedAmount: { ...BASE, color: color.gainedAmount } as TextStyle,
+  negativeAmount: { ...BASE, color: color.negativeAmount } as TextStyle,
+  positiveAmount: { ...BASE, color: color.positiveAmount } as TextStyle,
 }
 
 /**

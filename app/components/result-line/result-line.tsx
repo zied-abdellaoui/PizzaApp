@@ -39,7 +39,7 @@ export interface ResultLineProps {
  * Describe your component here
  */
 export const ResultLine = observer(function ResultLine(props: ResultLineProps) {
-  const { style, titleTx, amount, amountPreset = "gainedAmount", accordion = false } = props
+  const { style, titleTx, amount, amountPreset = "positiveAmount", accordion = false } = props
   const styles = flatten([CONTAINER, style])
 
   if (accordion) {
