@@ -1,5 +1,6 @@
 import { size } from "./sizes"
 import { typography } from "./typography"
+import { color } from "./color"
 
 export const elementsTheme = {
   Card: {
@@ -26,6 +27,28 @@ export const elementsTheme = {
   ListItem: {
     containerStyle: {
       paddingHorizontal: 0,
+    },
+  },
+  Tab: {
+    indicatorStyle: {
+      backgroundColor: color.primary,
+      color: color.primary,
+    },
+  },
+  TabItem: {
+    titleStyle: {
+      color: color.primary,
+    },
+    indicatorStyle: {
+      backgroundColor: color.primary,
+      color: color.primary,
+    },
+    ButtonStyle: {
+      backgroundColor: color.primary,
+      color: color.primary,
+      titleStyle: {
+        color: color.primary,
+      },
     },
   },
 }

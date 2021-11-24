@@ -124,7 +124,8 @@
     "printWidth": 100,
     "semi": false,
     "singleQuote": false,
-    "trailingComma": "all"
+    "trailingComma": "all",
+    "bracketSameLine": true
   },
   "detox": {
     "test-runner": "jest",

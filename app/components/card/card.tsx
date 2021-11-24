@@ -24,8 +24,12 @@ export const Card = function Card(props: CardProps) {
   const i18nTitle = titleTx && translate(titleTx)
   return (
     <CardElement wrapperStyle={styleOverride}>
-      <CardElement.Title> {i18nTitle} </CardElement.Title>
-      <CardElement.Divider />
+      {i18nTitle && (
+        <>
+          <CardElement.Title> {i18nTitle} </CardElement.Title>
+          <CardElement.Divider />
+        </>
+      )}
       {props.children}
     </CardElement>
   )

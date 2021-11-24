@@ -3,12 +3,12 @@ import { View, StyleProp, TextStyle, ViewStyle } from "react-native"
 import { observer } from "mobx-react-lite"
 import { Text } from "../text/text"
 import { flatten } from "ramda"
-import { TxKeyPath } from "../../i18n"
+import { TxKeyPath, translate } from "../../i18n"
 import { ListItem } from "react-native-elements"
 import i18n from "i18n-js"
 import { TextPresets } from "../text/text.presets"
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5"
-import { color, size } from "../../theme"
+import { color, size, sizes } from "../../theme"
 
 const CONTAINER: ViewStyle = {
   flex: 1,
@@ -30,17 +30,73 @@ export interface ResultLineProps {
   children?: React.ReactNode
   style?: StyleProp<ViewStyle>
   titleTx?: TxKeyPath
+  title?: string
+  subtitle?: string
   amount?: number
-  amountPreset?: TextPresets
+  preset?: TextPresets
   accordion?: boolean
+  precision?: number
+  last?: boolean
+}
+
+const presets = {
+  negative: {
+    amount: {
+      color: color.negativeAmount,
+    },
+    title: {},
+  },
+
+  positive: {
+    amount: {
+      color: color.positiveAmount,
+    },
+    title: {},
+  },
+
+  bigNegative: {
+    amount: {
+      color: color.negativeAmount,
+      fontWeight: "bold",
+      fontSize: size.bigAmount,
+    },
+    title: {
+      fontWeight: "bold",
+      fontSize: size.bigAmount,
+    },
+  },
+
+  bigPositive: {
+    amount: {
+      color: color.positiveAmount,
+      fontWeight: "bold",
+      fontSize: size.bigAmount,
+    },
+    title: {
+      fontWeight: "bold",
+      fontSize: size.bigAmount,
+    },
+  },
 }
 
 /**
  * Describe your component here
  */
 export const ResultLine = observer(function ResultLine(props: ResultLineProps) {
-  const { style, titleTx, amount, amountPreset = "positiveAmount", accordion = false } = props
+  const {
+    style,
+    titleTx,
+    amount,
+    preset = "positive",
+    accordion = false,
+    title,
+    subtitle,
+    precision = 0,
+    last = false,
+  } = props
   const styles = flatten([CONTAINER, style])
+  const i18nTitle = titleTx && translate(titleTx)
+  const titleContent = i18nTitle || title
 
   if (accordion) {
     const [expanded, setExpanded] = React.useState(false)
@@ -63,8 +119,10 @@ export const ResultLine = observer(function ResultLine(props: ResultLineProps) {
               />
             </View>
             <ListItem.Content style={styles}>
-              <Text tx={titleTx}></Text>
-              <Text preset={amountPreset}>{i18n.toCurrency(amount)}</Text>
+              <Text tx={titleTx} text={title}></Text>
+              <Text style={presets[preset].amount}>
+                {i18n.toCurrency(amount, { precision: precision })}
+              </Text>
             </ListItem.Content>
           </>
         }
@@ -72,18 +130,20 @@ export const ResultLine = observer(function ResultLine(props: ResultLineProps) {
         onPress={() => {
           setExpanded(!expanded)
         }}
-        bottomDivider
-      >
+        bottomDivider>
         <View style={ACCORDION_CHILDREN}>{props.children}</View>
       </ListItem.Accordion>
     )
   } else {
     return (
-      <ListItem bottomDivider>
-        <ListItem.Content style={styles}>
-          <Text tx={titleTx}></Text>
-          <Text preset={amountPreset}>{i18n.toCurrency(amount)}</Text>
+      <ListItem bottomDivider={!last}>
+        <ListItem.Content>
+          <ListItem.Title style={presets[preset].title}>{titleContent}</ListItem.Title>
+          {subtitle ? <ListItem.Subtitle>{subtitle}</ListItem.Subtitle> : null}
         </ListItem.Content>
+        <Text style={presets[preset].amount}>
+          {i18n.toCurrency(amount, { precision: precision })}
+        </Text>
       </ListItem>
     )
   }

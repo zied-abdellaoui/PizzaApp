@@ -2,7 +2,10 @@
   "common": {
     "ok": "OK!",
     "cancel": "Cancel",
-    "back": "Back"
+    "back": "Back",
+    "From": "De",
+    "to": "à",
+    "more_than": "Plus de"
   },
   "main": {
     "simulations": "Simulations",
@@ -25,11 +28,24 @@
     "cancel": "cancel",
     "chooseName": "Choose a name for this simulation",
     "aquisitionCost": "Aquisition cost",
+    "totalCost": "Total des frais de  notaire",
+    "ancien": "Ancien",
+    "neuf": "neuf",
     "details": {
       "title": "Details",
       "emoluments": "Emoluments",
       "taxes": "Taxes",
-      "thirdline": "Formality and debours"
+      "thirdline": "Formality and debours",
+      "threshold1": "De 0 à 6500",
+      "threshold2": "De 6500 à 17000",
+      "threshold3": "De 17000 à 60000",
+      "threshold4": "Plus de 60000 ",
+      "tva": "TVA",
+      "taxe1": "Droit departemental d'entregistrement",
+      "taxe2": "Taxe communale",
+      "taxe3": "Frais d'assiette",
+      "taxe4": "Contribution de securite immobiliere",
+      "taxe5": "Taxe de publicite fonciere"
     }
   },
   "demoScreen": {
