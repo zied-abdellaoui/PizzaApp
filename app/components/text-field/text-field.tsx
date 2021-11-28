@@ -1,8 +1,9 @@
 import React from "react"
 import { StyleProp, TextInput, TextInputProps, TextStyle, View, ViewStyle } from "react-native"
-import { color, spacing, typography } from "../../theme"
+import { color, size, spacing, typography } from "../../theme"
 import { translate, TxKeyPath } from "../../i18n"
 import { Text } from "../text/text"
+import { Input } from "react-native-elements"
 
 // the base styling for the container
 const CONTAINER: ViewStyle = {
@@ -13,9 +14,15 @@ const CONTAINER: ViewStyle = {
 const INPUT: TextStyle = {
   fontFamily: typography.primary,
   color: color.text,
-  minHeight: 44,
+  minHeight: 70,
   fontSize: 18,
+  textAlign: "center",
   backgroundColor: color.palette.white,
+}
+
+const LABEL: TextStyle = {
+  fontFamily: typography.header,
+  fontSize: size.header,
 }
 
 // currently we have no presets, but that changes quickly when you build your app.
@@ -68,31 +75,26 @@ export interface TextFieldProps extends TextInputProps {
 export function TextField(props: TextFieldProps) {
   const {
     placeholderTx,
-    placeholder,
     labelTx,
-    label,
-    preset = "default",
-    style: styleOverride,
     inputStyle: inputStyleOverride,
+    style: containerStyleOverride,
     forwardedRef,
     ...rest
   } = props
 
-  const containerStyles = [CONTAINER, PRESETS[preset], styleOverride]
   const inputStyles = [INPUT, inputStyleOverride]
-  const actualPlaceholder = placeholderTx ? translate(placeholderTx) : placeholder
+  const containerStyles = [CONTAINER, containerStyleOverride]
+  const actualPlaceholder = placeholderTx ? translate(placeholderTx) : translate(labelTx)
 
   return (
-    <View style={containerStyles}>
-      <Text preset="fieldLabel" tx={labelTx} text={label} />
-      <TextInput
-        placeholder={actualPlaceholder}
-        placeholderTextColor={color.palette.lighterGrey}
-        underlineColorAndroid={color.transparent}
-        {...rest}
-        style={inputStyles}
-        ref={forwardedRef}
-      />
-    </View>
+    <Input
+      label={translate(labelTx)}
+      labelStyle={LABEL}
+      placeholder={actualPlaceholder}
+      inputStyle={inputStyles}
+      containerStyle={containerStyles}
+      ref={forwardedRef}
+      {...rest}
+    />
   )
 }

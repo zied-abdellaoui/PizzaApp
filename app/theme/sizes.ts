@@ -4,5 +4,5 @@ export const size = {
   text: sizes[1],
   header: sizes[4],
   smallHeader: sizes[2],
-  bigAmount: sizes[2],
+  bigAmount: sizes[4],
 }

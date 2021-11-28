@@ -3,6 +3,7 @@ import { typography } from "./typography"
 import { color } from "./color"
 
 export const elementsTheme = {
+  fontFamily: typography.primary,
   Card: {
     containerStyle: {
       borderWidth: 0,
@@ -30,25 +31,27 @@ export const elementsTheme = {
     },
   },
   Tab: {
+    backgroundColor: color.palette.white,
     indicatorStyle: {
       backgroundColor: color.primary,
-      color: color.primary,
     },
   },
   TabItem: {
+    backgroundColor: color.primary,
+    color: color.primary,
+    buttonStyle: {
+      backgroundColor: color.palette.white,
+    },
     titleStyle: {
       color: color.primary,
     },
-    indicatorStyle: {
-      backgroundColor: color.primary,
-      color: color.primary,
+  },
+  Input: {
+    TextInput: {
+      verticalPadding: 80,
     },
-    ButtonStyle: {
-      backgroundColor: color.primary,
-      color: color.primary,
-      titleStyle: {
-        color: color.primary,
-      },
+    labelSyle: {
+      fontFamily: typography.primary,
     },
   },
 }

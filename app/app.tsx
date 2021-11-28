@@ -10,6 +10,7 @@
  * if you're interested in adding screens and navigators.
  */
 import "./i18n"
+import * as Localization from "expo-localization"
 import "./utils/ignore-warnings"
 import React, { useState, useEffect } from "react"
 import { SafeAreaProvider, initialWindowMetrics } from "react-native-safe-area-context"
@@ -57,6 +58,7 @@ function App() {
   // You can replace with your own loading component if you wish.
   if (!rootStore || !isNavigationStateRestored) return null
 
+  console.tron.debug(Localization.locale)
   // otherwise, we're ready to render the app
   return (
     <ThemeProvider theme={elementsTheme}>

@@ -8,7 +8,7 @@ import { ListItem } from "react-native-elements"
 import i18n from "i18n-js"
 import { TextPresets } from "../text/text.presets"
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5"
-import { color, size, sizes } from "../../theme"
+import { color, size, sizes, typography } from "../../theme"
 
 const CONTAINER: ViewStyle = {
   flex: 1,
@@ -43,38 +43,44 @@ const presets = {
   negative: {
     amount: {
       color: color.negativeAmount,
+      fontFamily: typography.header,
     },
-    title: {},
+    title: {
+      fontFamily: typography.header,
+    },
   },
 
   positive: {
     amount: {
       color: color.positiveAmount,
+      fontFamily: typography.header,
     },
-    title: {},
+    title: {
+      fontFamily: typography.header,
+    },
   },
 
   bigNegative: {
     amount: {
       color: color.negativeAmount,
-      fontWeight: "bold",
       fontSize: size.bigAmount,
+      fontFamily: typography.header,
     },
     title: {
-      fontWeight: "bold",
       fontSize: size.bigAmount,
+      fontFamily: typography.header,
     },
   },
 
   bigPositive: {
     amount: {
       color: color.positiveAmount,
-      fontWeight: "bold",
       fontSize: size.bigAmount,
+      fontFamily: typography.header,
     },
     title: {
-      fontWeight: "bold",
       fontSize: size.bigAmount,
+      fontFamily: typography.header,
     },
   },
 }
@@ -119,7 +125,7 @@ export const ResultLine = observer(function ResultLine(props: ResultLineProps) {
               />
             </View>
             <ListItem.Content style={styles}>
-              <Text tx={titleTx} text={title}></Text>
+              <Text tx={titleTx} style={presets[preset].title} text={title}></Text>
               <Text style={presets[preset].amount}>
                 {i18n.toCurrency(amount, { precision: precision })}
               </Text>
@@ -130,7 +136,8 @@ export const ResultLine = observer(function ResultLine(props: ResultLineProps) {
         onPress={() => {
           setExpanded(!expanded)
         }}
-        bottomDivider>
+        bottomDivider
+      >
         <View style={ACCORDION_CHILDREN}>{props.children}</View>
       </ListItem.Accordion>
     )
